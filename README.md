@@ -10,4 +10,3 @@
 お試しはこちら（↓）からどうぞ！
 https://kitao.github.io/pyxel/wasm/launcher/?run=hiekichi.ChottoCopter.ChottoCopter240
 ハンドヘルドゲーム機用にpyxappファイルも置いておきます。
- main
