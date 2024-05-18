@@ -1,4 +1,4 @@
-# ChottoCpter
+# ChottoCopter
 
 とりあえず一通り動くようになりました。
 
