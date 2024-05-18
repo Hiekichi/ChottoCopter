@@ -124,6 +124,7 @@ class Copter():
             if d > dx1 and d < dx2:
                 count_died += 1
                 rescuers.remove(rescuer)
+                pyxel.play(2,8)
         if self.force_y > 1.2:  # 速度超過で着陸失敗
             hiteffectt2s.append(HitEffectT2(self.x-3,self.y-3))
             hiteffectt2s.append(HitEffectT2(self.x-3,self.y+3))
@@ -136,6 +137,7 @@ class Copter():
             ufo.is_active = False
             count_died += count_board
             count_board = 0
+            pyxel.play(2,6)
 
         self.landingchecked_flag = True
 
@@ -194,6 +196,7 @@ class HitEffect1():
         self.cnt = 15
         self.is_alive = True
         self.is_hitground = is_hitground
+        pyxel.play(1,2)
     def update(self):
         self.cnt -= 1
         if self.cnt <= 0:
@@ -207,6 +210,7 @@ class HitEffect2():
         self.y = y
         self.cnt = 30
         self.is_alive = True
+        pyxel.play(1,2)
     def update(self):
         self.cnt -= 1
         if self.cnt <= 0:
@@ -220,6 +224,7 @@ class HitEffectT1():
         self.y = y
         self.cnt = 21
         self.is_alive = True
+        #pyxel.play(1,9)
     def update(self):
         self.cnt -= 1
         if self.cnt <= 0:
@@ -233,6 +238,7 @@ class HitEffectT2():
         self.y = y
         self.cnt = 42
         self.is_alive = True
+        pyxel.play(1,9)
     def update(self):
         self.cnt -= 1
         if self.cnt <= 0:
@@ -249,6 +255,7 @@ class Bullet1():  ## 横向きに飛ばす弾（小屋の扉、人質、戦闘�
         self.y = y
         self.dx = dx
         self.dy = dy
+        pyxel.play(0,1)
     def update(self):
         global planes
         if self.y > 212:   # 地面にHITして消滅
@@ -279,6 +286,7 @@ class Bullet2():  ## こっち向きに飛ばす弾（戦車に対応する）
         self.y = y
         self.dx = dx
         self.dy = dy
+        pyxel.play(0,1)
     def update(self):
         self.x += self.dx
         self.y += self.dy
@@ -296,6 +304,7 @@ class Missile():  ## 飛行機の発射弾（ミサイル）
         self.y = y
         self.dx = dx
         self.dy = dy
+        pyxel.play(2,3)
     def update(self):
         global gameover_cnt,count_died,count_board
         self.x += self.dx
@@ -313,6 +322,7 @@ class Missile():  ## 飛行機の発射弾（ミサイル）
             count_died += count_board
             count_board = 0
             self.is_alive = False
+            pyxel.play(2,6)
     def draw(self):
         pyxel.blt(self.x-framewin.x,self.y,0, 0,232,-8*self.dx,8,0)
 
@@ -364,6 +374,7 @@ class Smiler():
         self.y = 210
         self.speed = pyxel.rndf(0.3,0.6)
         self.hello_cnt = 0
+        pyxel.play(0,4)
     def update(self):
         if self.hello_cnt > 0:
             self.hello_cnt -= 1
@@ -536,6 +547,7 @@ class App():
         gameover_cnt = 0
         self.gameend_cnt = 0
         self.stage_counter = 0
+        pyxel.play(0,0)
 
     def update(self):
         global count_died,count_board,count_rescued,gameover_cnt,gameend_cnt
@@ -653,10 +665,12 @@ class App():
                     if (copter.x - rescuer.x) < 8 and (copter.x - rescuer.x) > -32:
                         count_board += 1
                         rescuers.remove(rescuer)
+                        pyxel.play(0,5)
                 else:
                     if (copter.x - rescuer.x) < 0 and (copter.x - rescuer.x) > -24:
                         count_board += 1
                         rescuers.remove(rescuer)
+                        pyxel.play(0,5)
         ### 自機の更新
         copter.update()
         ### 戦車の更新
@@ -664,6 +678,7 @@ class App():
             tank.update()
             if tank.is_alive == False:
                 tanks.remove(tank)
+                pyxel.play(2,6)
         ### UFOの描画
         ufo.update()
         if ufo.is_active:
@@ -717,6 +732,7 @@ class App():
                             if rescuer.x < hit.x and rescuer.x + 8 > hit.x:
                                 count_died += 1
                                 rescuers.remove(rescuer)
+                                pyxel.play(2,8)
                 hiteffect1s.remove(hit)
         for hit in reversed(hiteffect2s): ### ヘリからのこっち向き弾のエフェクト
             hit.update()
@@ -729,6 +745,7 @@ class App():
                     if abs(rescuer.x - hit.x) < 3:
                         count_died += 1
                         rescuers.remove(rescuer)
+                        pyxel.play(2,8)
                 for cabin in reversed(cabins): ### 小屋の扉に被弾
                     if cabin.status == 0 and abs(cabin.x - hit.x) < 3:
                         cabin.status = 1
@@ -754,6 +771,7 @@ class App():
         ufo.is_active = False
         count_died += count_board
         count_board = 0
+        pyxel.play(2,6)
 
 
     def draw(self):
@@ -827,7 +845,7 @@ class App():
             pyxel.blt(72,100,1,0,64,104,16,0)
 
         ### デバッグ用描画
-        pyxel.text(40,50,"gameend_cnt:{}  gameover_cnt:{}".format(gameend_cnt,gameover_cnt),7)
+        #pyxel.text(40,50,"gameend_cnt:{}  gameover_cnt:{}".format(gameend_cnt,gameover_cnt),7)
         #pyxel.text(40,30,"Copter ({},{} force_y:{})".format(int(copter.x),int(copter.y),copter.force_y),7)
         #pyxel.text(40,40,"landingchecked_flag:{}".format(copter.landingchecked_flag),7)
         #pyxel.text(40,50,"framewin.x:{}".format(int(framewin.x)),7)
