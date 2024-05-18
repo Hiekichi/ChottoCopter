@@ -7,6 +7,7 @@
 
 ゲームルールなどは本家をご参照ください。
 
-お試しはこちら（↓）からどうぞ！
+お試しはこちらからどうぞ！
 https://kitao.github.io/pyxel/wasm/launcher/?run=hiekichi.ChottoCopter.ChottoCopter240
+
 ハンドヘルドゲーム機用にpyxappファイルも置いておきます。
