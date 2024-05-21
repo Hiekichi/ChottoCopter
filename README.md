@@ -19,7 +19,7 @@
 - Apple][で遊んでいたときは将来オマージュ作品作るようになるとは想像してませんでした。しみじみ・・・
 
 ## 動作確認はこちらから
-- [Pyxel Web Launcher]([https://kitao.github.io/pyxel/wasm/launcher/?run=Hiekichi.ChottoCopter.ChottoCopter240])
+- [Pyxel Web Launcher](https://kitao.github.io/pyxel/wasm/launcher/?run=Hiekichi.ChottoCopter.ChottoCopter240)
 - [ハンドヘルドゲーム機用(pyxappファイル)](https://github.com/Hiekichi/ChottoCopter/blob/main/ChottoCopter.pyxapp)
 
 ゲームルールなどは本家をご参照ください。
