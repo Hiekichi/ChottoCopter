@@ -15,12 +15,12 @@
 - ヘリが壊れたらGAME OVER、人質全員救出か死亡でGAME ENDです。
 - 敵キャラは3種類（戦車、戦闘機、謎の円盤）です。
 
-## その他
-- Apple][で遊んでいたときは将来オマージュ作品作るようになるとは想像してませんでした。しみじみ・・・
-
 ## 動作確認はこちらから
 - [Pyxel Web Launcher](https://kitao.github.io/pyxel/wasm/launcher/?run=Hiekichi.ChottoCopter.ChottoCopter240)
 - [ハンドヘルドゲーム機用(pyxappファイル)](https://github.com/Hiekichi/ChottoCopter/blob/main/ChottoCopter.pyxapp)
 
-ゲームルールなどは本家をご参照ください。
 
+## その他
+- Apple][で遊んでいたときはマネして作る日がくるとは想像もしていませんでした。しみじみ・・・
+- 細かいゲームルールなどは本家をご参照ください。
+- 最近作ったものの中で最も凝って最も近似できたのに、最も反応が悪かったのが悲しい。世の中の人はCh〇pLifterのこと知らないそうです...
