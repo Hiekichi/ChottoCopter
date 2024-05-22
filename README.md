@@ -6,6 +6,9 @@
 
 ![スクリーンショット](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240521/20240521230308.png)
 
+![Animation](https://cdn-ak.f.st-hatena.com/images/fotolife/H/Hiesuke/20240522/20240522234136.gif)
+
+
 ## 遊び方など
 - ゲームパッド操作のみです。キーボードでは操作できません。
 - 左アナログスティックで操縦、Aボタンでヘリの向き変更、Bボタンで弾発射です。
